@@ -53,9 +53,9 @@ WORKDIR /app/${package}
 ENTRYPOINT ["python", "coremark_pro_plugin.py"]
 CMD []
 
-LABEL org.opencontainers.image.source="https://gitlab.com/redhat/edge/tests/perfscale/arcaflow-plugin-coremark-pro"
+LABEL org.opencontainers.image.source="https://github.com/arcalot/arcaflow-plugin-coremark-pro"
 LABEL org.opencontainers.image.licenses="Apache-2.0+GPL-2.0+COREMARK®-PRO-ACCEPTABLE-USE-AGREEMENT-only"
-LABEL org.opencontainers.image.vendor="Red Hat RHIVOS Perf & Scale"
-LABEL org.opencontainers.image.authors="Red Hat RHIVOS Perf & Scale Team"
+LABEL org.opencontainers.image.vendor="Arcalot project"
+LABEL org.opencontainers.image.authors="Arcalot contributors"
 LABEL org.opencontainers.image.title="Python Plugin coremark_pro"
 LABEL io.github.arcalot.arcaflow.plugin.version="1"
