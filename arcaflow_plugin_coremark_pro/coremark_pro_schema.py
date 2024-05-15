@@ -15,7 +15,7 @@ class CertifyAllParams:
     workers: typing.Annotated[
         int,
         schema.name("Workers"),
-        schema.description("Number of workers per benchmark")
+        schema.description("Number of workers per benchmark"),
     ]
 
 
@@ -103,11 +103,12 @@ class CertifyAllResult:
         schema.description("Benchmark: CoreMark-PRO"),
     ]
 
+
 certifyAllResultSchema = plugin.build_object_schema(CertifyAllResult)
 
 
 @dataclass
-class SuccessOutput():
+class SuccessOutput:
     coremark_pro_params: typing.Annotated[
         CertifyAllParams,
         schema.name("Test Params"),
@@ -116,7 +117,7 @@ class SuccessOutput():
     coremark_pro_results: typing.Annotated[
         CertifyAllResult,
         schema.name("Test Results"),
-        schema.description("The results of the CoreMark®-PRO")
+        schema.description("The results of the CoreMark®-PRO"),
     ]
 
 

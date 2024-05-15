@@ -15,10 +15,7 @@ from coremark_pro_schema import (
 def run_oneshot_cmd(command_list, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command_list,
-            stderr=subprocess.PIPE,
-            text=True,
-            cwd=workdir
+            command_list, stderr=subprocess.PIPE, text=True, cwd=workdir
         )
     except subprocess.CalledProcessError as error:
         return "error", ErrorOutput(
@@ -75,7 +72,7 @@ def certify_all(
             ca_results[line_name] = {
                 "MultiCore": line.split()[1],
                 "SingleCore": line.split()[2],
-                "Scaling": line.split()[3]
+                "Scaling": line.split()[3],
             }
 
     return "success", SuccessOutput(
