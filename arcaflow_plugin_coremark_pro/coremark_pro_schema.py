@@ -137,60 +137,60 @@ class CertifyAllResult:
         CertifyAllItem,
         schema.id("cjpeg-rose7-preset"),
         schema.name("CJPEG Rose7 Preset"),
-        schema.description("Benchmark: CJPEG Rose7 Preset"),
+        schema.description("CJPEG Rose7 Preset benchmark results"),
     ]
     core: typing.Annotated[
         CertifyAllItem,
         schema.id("core"),
         schema.name("Core"),
-        schema.description("Benchmark: Core"),
+        schema.description("Core benchmark results"),
     ]
     linear_alg_mid_100x100_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("linear_alg-mid-100x100-sp"),
         schema.name("Linear Alg Mid 100x100 SP"),
-        schema.description("Benchmark: Linear Alg Mid 100x100 SP"),
+        schema.description("Linear Alg Mid 100x100 SP benchmark results"),
     ]
     loops_all_mid_10k_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("loops-all-mid-10k-sp"),
         schema.name("Loops All Mid 10k SP"),
-        schema.description("Benchmark: Loops All Mid 10k SP"),
+        schema.description("Loops All Mid 10k SP benchmark results"),
     ]
     nnet_test: typing.Annotated[
         CertifyAllItem,
         schema.name("NNet Test"),
-        schema.description("Benchmark: NNet Test"),
+        schema.description("NNet Test benchmark results"),
     ]
     parser_125k: typing.Annotated[
         CertifyAllItem,
         schema.id("parser-125k"),
         schema.name("Parser 125k"),
-        schema.description("Benchmark: Parser 125k"),
+        schema.description("Parser 125k benchmark results"),
     ]
     radix2_big_64k: typing.Annotated[
         CertifyAllItem,
         schema.id("radix2-big-64k"),
         schema.name("Radix2 Big 64k"),
-        schema.description("Benchmark: Radix2 Big 64k"),
+        schema.description("Radix2 Big 64k benchmark results"),
     ]
     sha_test: typing.Annotated[
         CertifyAllItem,
         schema.id("sha-test"),
         schema.name("SHA Test"),
-        schema.description("Benchmark: SHA Test"),
+        schema.description("SHA Test benchmark results"),
     ]
     zip_test: typing.Annotated[
         CertifyAllItem,
         schema.id("zip-test"),
         schema.name("ZIP Test"),
-        schema.description("Benchmark: ZIP Test"),
+        schema.description("ZIP Test benchmark results"),
     ]
     coremark_pro: typing.Annotated[
         CertifyAllItem,
         schema.id("CoreMark-PRO"),
         schema.name("CoreMark PRO"),
-        schema.description("Benchmark: CoreMark-PRO"),
+        schema.description("CoreMark-PRO benchmark results"),
     ]
 
 
@@ -202,12 +202,12 @@ class SuccessOutput:
     coremark_pro_params: typing.Annotated[
         CertifyAllParams,
         schema.name("Test Params"),
-        schema.description("The paramaters applied to the CoreMark®-PRO tests"),
+        schema.description("The parameters supplied to the CoreMark®-PRO benchmarks"),
     ]
     coremark_pro_results: typing.Annotated[
         CertifyAllResult,
         schema.name("Test Results"),
-        schema.description("The results of the CoreMark®-PRO"),
+        schema.description("Results of the CoreMark®-PRO benchmarks"),
     ]
 
 

@@ -35,8 +35,8 @@ run_log_path = "/root/coremark-pro/builds/linux64/gcc64/logs/linux64.gcc64.log"
     id="tune-iterations",
     name="Tune Iterations",
     description=(
-        "Runs all of the nine tests, checks their run times, calculates the numer of "
-        "iterations for each test to rougly reach the 'target_runtime', and returns "
+        "Runs all of the nine tests, checks their run times, calculates the number of "
+        "iterations for each test to roughly reach the 'target_runtime', and returns "
         "an object compatible with the 'certify-all' step. NOTE -- If you are going to "
         "pass the output of the 'tune-iterations' step to the 'certify-all' step in a "
         "workflow, you should include in the input to this step all of the parameters "
@@ -103,21 +103,15 @@ def certify_all(
         "make",
         "-s",
         "certify-all",
-        "XCMD='",
+        # "XCMD='",
     ]
 
-    if params.verify:
-        ca_cmd[-1] += "-v1 "
-    else:
-        ca_cmd[-1] += "-v0 "
-
+    xcmd = ["-v1" if params.verify else "-v0"]
     if params.contexts:
-        ca_cmd[-1] += f"-c{params.contexts}"
-
+        xcmd.append(f"-c{params.contexts}")
     if params.workers:
-        ca_cmd[-1] += f"-w{params.workers}"
-
-    ca_cmd[-1] += "'"
+        xcmd.append(f"-w{params.workers}")
+    ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
 
     ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
 
@@ -145,9 +139,9 @@ def certify_all(
             pass
         if line_name in ca_results and len(line_list) > 1:
             ca_results[line_name] = {
-                "MultiCore": line_list[1],
-                "SingleCore": line_list[2],
-                "Scaling": line_list[3],
+                "MultiCore": float(line_list[1]),
+                "SingleCore": float(line_list[2]),
+                "Scaling": float(line_list[3]),
             }
             if line_name != "CoreMark-PRO":
                 with open(file=run_log_path, encoding="utf-8") as file:

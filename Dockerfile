@@ -9,8 +9,7 @@ ARG package
 
 RUN dnf -y install git && \
     git clone https://github.com/eembc/coremark-pro.git && \
-    cd coremark-pro && \
-    make build
+    make -C coremark-pro build
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
