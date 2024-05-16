@@ -4,6 +4,6 @@ services:
     image: quay.io/arcalot/arcaflow-plugin-coremark-pro
     build: .
     volumes:
-      - source: ./inputs/example.yaml
+      - source: ./inputs/certify-all-example.yaml
         target: /config/example.yaml
         type: bind
