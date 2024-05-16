@@ -32,6 +32,7 @@ class TuneIterationsInput(CertifyAllParams):
         schema.description("Target run time in seconds for each benchmark"),
     ] = 10
 
+
 @dataclass
 class Iterations:
     cjpeg_rose7_preset: typing.Annotated[
@@ -91,15 +92,16 @@ class Iterations:
 iterationsSchema = plugin.build_object_schema(Iterations)
 
 
-
 @dataclass
 class CertifyAllInput(CertifyAllParams):
-    """ Class simply merges the other input classes """
+    """Class simply merges the other input classes"""
+
     iterations: typing.Annotated[
         typing.Optional[Iterations],
         schema.name("Benchmark Iterations"),
         schema.description("Number of iterations for each benchmark"),
     ] = None
+
 
 @dataclass
 class CertifyAllItem:
@@ -125,7 +127,7 @@ class CertifyAllItem:
         typing.Optional[int],
         schema.id("Iterations"),
         schema.name("Iterations"),
-        schema.description("Number of benchmark iterations")
+        schema.description("Number of benchmark iterations"),
     ] = None
 
 

@@ -27,6 +27,7 @@ def run_oneshot_cmd(command_list, workdir) -> str:
         )
     return "completed", cmd_out
 
+
 run_log_path = "/root/coremark-pro/builds/linux64/gcc64/logs/linux64.gcc64.log"
 
 
@@ -62,11 +63,12 @@ def tune_iterations(
                 )
 
     return "success", CertifyAllInput(
-        contexts = params.contexts,
-        workers = params.workers,
-        verify = params.verify,
-        iterations = iterationsSchema.unserialize(benchmark_iterations),
+        contexts=params.contexts,
+        workers=params.workers,
+        verify=params.verify,
+        iterations=iterationsSchema.unserialize(benchmark_iterations),
     )
+
 
 @plugin.step(
     id="certify-all",
@@ -152,9 +154,7 @@ def certify_all(
                     for line in file:
                         line_list = line.split()
                         if "median single" in line and line_list[2] == line_name:
-                            ca_results[line_name]["Iterations"] = int(
-                                line_list[7]
-                            )
+                            ca_results[line_name]["Iterations"] = int(line_list[7])
 
     return "success", SuccessOutput(
         coremark_pro_params=params,
