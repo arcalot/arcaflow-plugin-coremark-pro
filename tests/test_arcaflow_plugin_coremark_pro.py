@@ -3,13 +3,11 @@ import unittest
 
 import coremark_pro_plugin
 from coremark_pro_schema import (
-    CertifyAllParams,
     TuneIterationsInput,
     Iterations,
     CertifyAllInput,
     CertifyAllResult,
     CertifyAllItem,
-    # SuccessOutput,
     ErrorOutput,
 )
 from arcaflow_plugin_sdk import plugin
