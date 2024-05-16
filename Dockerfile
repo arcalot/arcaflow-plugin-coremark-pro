@@ -7,9 +7,13 @@ ARG package=arcaflow_plugin_coremark_pro
 FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.4.0 as build
 ARG package
 
+WORKDIR /root
+
 RUN dnf -y install git && \
     git clone https://github.com/eembc/coremark-pro.git && \
     make -C coremark-pro build
+
+WORKDIR /app
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
@@ -45,7 +49,7 @@ COPY ${package}/ /app/${package}
 # Install all plugin dependencies from the generated requirements.txt file
 RUN python -m pip install -r requirements.txt
 
-COPY --from=build /app/coremark-pro /root/coremark-pro
+COPY --from=build /root/coremark-pro /root/coremark-pro
 
 WORKDIR /app/${package}
 
