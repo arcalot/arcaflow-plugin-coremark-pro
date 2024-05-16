@@ -51,7 +51,7 @@ echo '{"contexts": 1, "workers": 1}' | podman run -i arcaflow-plugin-coremark-pr
 
 A sample Arcaflow workflow file is provided to demonstrate how to connect the output
 of the `tune-iterations` step to the input of the `certify-all` step. This will require
-and [Arcaflow engine binary](https://github.com/arcalot/arcaflow-engine/releases)
+an [Arcaflow engine binary](https://github.com/arcalot/arcaflow-engine/releases)
 version of v0.17.0-beta2 or greater.
 
 ```bash

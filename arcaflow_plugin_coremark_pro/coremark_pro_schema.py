@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import typing
 from dataclasses import dataclass
 from arcaflow_plugin_sdk import schema, plugin
