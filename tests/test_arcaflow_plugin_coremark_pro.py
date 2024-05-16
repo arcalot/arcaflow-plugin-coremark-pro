@@ -100,7 +100,6 @@ class CoreMarkProTest(unittest.TestCase):
             ca_output_data.coremark_pro_results.core.multi_core,
             float,
         )
-        print(f"CA output is: {ca_output_data}")
 
 
 if __name__ == "__main__":
