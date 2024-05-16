@@ -20,9 +20,86 @@ class CertifyAllParams:
     verify: typing.Annotated[
         typing.Optional[bool],
         schema.name("Verify"),
-        schema.description("Enable workload verification runs"),
+        schema.description("Enable benchmark validation runs"),
     ] = False
 
+
+@dataclass
+class TuneIterationsInput(CertifyAllParams):
+    target_run_time: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Target Run Time Seconds"),
+        schema.description("Target run time in seconds for each benchmark"),
+    ] = 10
+
+@dataclass
+class Iterations:
+    cjpeg_rose7_preset: typing.Annotated[
+        typing.Optional[int],
+        schema.id("cjpeg-rose7-preset"),
+        schema.name("CJPEG Rose7 Preset Iterations"),
+        schema.description("Iterations for cjpeg-rose7-preset benchmark"),
+    ] = None
+    core: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Core Iterations"),
+        schema.description("Iterations for core benchmark"),
+    ] = None
+    linear_alg_mid_100x100_sp: typing.Annotated[
+        typing.Optional[int],
+        schema.id("linear_alg-mid-100x100-sp"),
+        schema.name("Linear Alg Mid 100x100 SP Iterations"),
+        schema.description("Iterations for linear_alg-mid-100x100-sp benchmark"),
+    ] = None
+    loops_all_mid_10k_sp: typing.Annotated[
+        typing.Optional[int],
+        schema.id("loops-all-mid-10k-sp"),
+        schema.name("Loops All Mid 10k SP Iterations"),
+        schema.description("Iterations for loops-all-mid-10k-sp benchmark"),
+    ] = None
+    nnet_test: typing.Annotated[
+        typing.Optional[int],
+        schema.name("NNet Test Iterations"),
+        schema.description("Iterations for nnet_test benchmark"),
+    ] = None
+    parser_125k: typing.Annotated[
+        typing.Optional[int],
+        schema.id("parser-125k"),
+        schema.name("Parser 125k Iterations"),
+        schema.description("Iterations for parser-125k benchmark"),
+    ] = None
+    radix2_big_64k: typing.Annotated[
+        typing.Optional[int],
+        schema.id("radix2-big-64k"),
+        schema.name("Radix2 Big 64k Iterations"),
+        schema.description("Iterations for radix2-big-64k benchmark"),
+    ] = None
+    sha_test: typing.Annotated[
+        typing.Optional[int],
+        schema.id("sha-test"),
+        schema.name("SHA Test Iterations"),
+        schema.description("Iterations for sha-test benchmark"),
+    ] = None
+    zip_test: typing.Annotated[
+        typing.Optional[int],
+        schema.id("zip-test"),
+        schema.name("ZIP Test Iterations"),
+        schema.description("Iterations for zip-test benchmark"),
+    ] = None
+
+
+iterationsSchema = plugin.build_object_schema(Iterations)
+
+
+
+@dataclass
+class CertifyAllInput(CertifyAllParams):
+    """ Class simply merges the other input classes """
+    iterations: typing.Annotated[
+        typing.Optional[Iterations],
+        schema.name("Benchmark Iterations"),
+        schema.description("Number of iterations for each benchmark"),
+    ] = None
 
 @dataclass
 class CertifyAllItem:

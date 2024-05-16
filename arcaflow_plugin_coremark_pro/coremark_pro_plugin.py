@@ -3,9 +3,13 @@
 import subprocess
 import sys
 import typing
+from math import ceil
 from arcaflow_plugin_sdk import plugin
 from coremark_pro_schema import (
-    CertifyAllParams,
+    TuneIterationsInput,
+    CertifyAllInput,
+    Iterations,
+    iterationsSchema,
     certifyAllResultSchema,
     SuccessOutput,
     ErrorOutput,
@@ -26,8 +30,43 @@ def run_oneshot_cmd(command_list, workdir) -> str:
 
 
 @plugin.step(
+    id="tune-iterations",
+    name="Tune Iterations",
+    description=(
+        "Runs all of the nine tests, checks their run times, calculates the numer of "
+        "iterations for each test to rougly reach the 'target_runtime', and returns "
+        "an object compatible with the 'certify-all' step."
+    ),
+    outputs={"success": CertifyAllInput, "error": ErrorOutput},
+)
+def tune_iterations(
+    params: TuneIterationsInput,
+) -> typing.Tuple[str, typing.Union[CertifyAllInput, ErrorOutput]]:
+
+    # Run the basic certify-all
+    certify_all(params=CertifyAllInput(verify = True), run_id="tune-iterations")
+
+    benchmark_iterations = {}
+
+    # Get the iteration median for each benchmark
+    with open("/root/coremark-pro/builds/linux64/gcc64/logs/linux64.gcc64.log") as file:
+        for line in file:
+            if "median single" in line:
+                line_list = line.split()
+                benchmark_iterations[line_list[2]] = ceil(
+                    params.target_run_time / float(line_list[6])
+                )
+
+    return "success", CertifyAllInput(
+        contexts = params.contexts,
+        workers = params.workers,
+        verify = params.verify,
+        iterations = iterationsSchema.unserialize(benchmark_iterations),
+    )
+
+@plugin.step(
     id="certify-all",
-    name="certify-all",
+    name="Certify All",
     description=(
         "Runs all of the nine tests, collects their output scores, and processes them "
         "to generate the final CoreMark-PRO score"
@@ -35,7 +74,7 @@ def run_oneshot_cmd(command_list, workdir) -> str:
     outputs={"success": SuccessOutput, "error": ErrorOutput},
 )
 def certify_all(
-    params: CertifyAllParams,
+    params: CertifyAllInput,
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
 
     ca_cmd = [
@@ -98,6 +137,7 @@ if __name__ == "__main__":
     sys.exit(
         plugin.run(
             plugin.build_schema(
+                tune_iterations,
                 certify_all,
             )
         )
