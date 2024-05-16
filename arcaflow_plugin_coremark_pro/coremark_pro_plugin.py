@@ -48,7 +48,7 @@ def tune_iterations(
     params: TuneIterationsInput,
 ) -> typing.Tuple[str, typing.Union[CertifyAllInput, ErrorOutput]]:
 
-    # Run the basic certify-all
+    # Run the basic certify-all to generate logs
     certify_all(params=CertifyAllInput(verify=True), run_id="tune-iterations")
 
     benchmark_iterations = {}
@@ -83,6 +83,7 @@ def certify_all(
     params: CertifyAllInput,
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
 
+    # Modify individual benchmark iterations if they were provided
     if params.iterations:
         target_iterations = iterationsSchema.serialize(params.iterations)
         for benchmark, iterations in target_iterations.items():
@@ -99,11 +100,11 @@ def certify_all(
                         opt_output += line
                 file.write(opt_output)
 
+    # Prepare the certify-all command
     ca_cmd = [
         "make",
         "-s",
         "certify-all",
-        # "XCMD='",
     ]
 
     xcmd = ["-v1" if params.verify else "-v0"]
@@ -113,6 +114,7 @@ def certify_all(
         xcmd.append(f"-w{params.workers}")
     ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
 
+    # Run certify-all
     ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
 
     if ca_return[0] == "error":
@@ -131,18 +133,20 @@ def certify_all(
         "CoreMark-PRO": {},
     }
 
+    # Construct the output object
     for line in ca_return[1].splitlines():
         line_list = line.split()
         try:
             line_name = line_list[0]
         except IndexError:
-            pass
-        if line_name in ca_results and len(line_list) > 1:
+            continue
+        if line_name in ca_results:
             ca_results[line_name] = {
                 "MultiCore": float(line_list[1]),
                 "SingleCore": float(line_list[2]),
                 "Scaling": float(line_list[3]),
             }
+            # Collect the per-benchmark iterations from the config files
             if line_name != "CoreMark-PRO":
                 with open(file=run_log_path, encoding="utf-8") as file:
                     for line in file:
