@@ -150,9 +150,9 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SuccessOutput</td></tr>
 <tr><th>Properties</th><td><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The paramaters applied to the CoreMark®-PRO tests</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The parameters supplied to the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
             </details><details><summary>coremark_pro_results (<code>reference[CertifyAllResult]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">The results of the CoreMark®-PRO</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">Results of the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>CertifyAllItem (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Iterations (<code>int</code>)</summary>
@@ -182,32 +182,32 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 </tbody></table>
         </details><details><summary>CertifyAllResult (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>CoreMark-PRO (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CoreMark PRO</td></tr><tr><th>Description:</th><td width="500">Benchmark: CoreMark-PRO</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>CoreMark PRO</td></tr><tr><th>Description:</th><td width="500">CoreMark-PRO benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>cjpeg-rose7-preset (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CJPEG Rose7 Preset</td></tr><tr><th>Description:</th><td width="500">Benchmark: CJPEG Rose7 Preset</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>CJPEG Rose7 Preset</td></tr><tr><th>Description:</th><td width="500">CJPEG Rose7 Preset benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>core (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Core</td></tr><tr><th>Description:</th><td width="500">Benchmark: Core</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Core</td></tr><tr><th>Description:</th><td width="500">Core benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>linear_alg-mid-100x100-sp (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Linear Alg Mid 100x100 SP</td></tr><tr><th>Description:</th><td width="500">Benchmark: Linear Alg Mid 100x100 SP</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Linear Alg Mid 100x100 SP</td></tr><tr><th>Description:</th><td width="500">Linear Alg Mid 100x100 SP benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>loops-all-mid-10k-sp (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Loops All Mid 10k SP</td></tr><tr><th>Description:</th><td width="500">Benchmark: Loops All Mid 10k SP</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Loops All Mid 10k SP</td></tr><tr><th>Description:</th><td width="500">Loops All Mid 10k SP benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>nnet_test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>NNet Test</td></tr><tr><th>Description:</th><td width="500">Benchmark: NNet Test</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>NNet Test</td></tr><tr><th>Description:</th><td width="500">NNet Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>parser-125k (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Parser 125k</td></tr><tr><th>Description:</th><td width="500">Benchmark: Parser 125k</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Parser 125k</td></tr><tr><th>Description:</th><td width="500">Parser 125k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>radix2-big-64k (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Radix2 Big 64k</td></tr><tr><th>Description:</th><td width="500">Benchmark: Radix2 Big 64k</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Radix2 Big 64k</td></tr><tr><th>Description:</th><td width="500">Radix2 Big 64k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>sha-test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>SHA Test</td></tr><tr><th>Description:</th><td width="500">Benchmark: SHA Test</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>SHA Test</td></tr><tr><th>Description:</th><td width="500">SHA Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>zip-test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>ZIP Test</td></tr><tr><th>Description:</th><td width="500">Benchmark: ZIP Test</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>ZIP Test</td></tr><tr><th>Description:</th><td width="500">ZIP Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SuccessOutput (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The paramaters applied to the CoreMark®-PRO tests</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The parameters supplied to the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
         </details><details><summary>coremark_pro_results (<code>reference[CertifyAllResult]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">The results of the CoreMark®-PRO</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">Results of the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details></details></td></tr>
@@ -217,7 +217,7 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 
 ## Tune Iterations (`tune-iterations`)
 
-Runs all of the nine tests, checks their run times, calculates the numer of iterations for each test to rougly reach the &#39;target_runtime&#39;, and returns an object compatible with the &#39;certify-all&#39; step. NOTE -- If you are going to pass the output of the &#39;tune-iterations&#39; step to the &#39;certify-all&#39; step in a workflow, you should include in the input to this step all of the parameters for the &#39;certify-all&#39; step so that the output object generated is complete.
+Runs all of the nine tests, checks their run times, calculates the number of iterations for each test to roughly reach the &#39;target_runtime&#39;, and returns an object compatible with the &#39;certify-all&#39; step. NOTE -- If you are going to pass the output of the &#39;tune-iterations&#39; step to the &#39;certify-all&#39; step in a workflow, you should include in the input to this step all of the parameters for the &#39;certify-all&#39; step so that the output object generated is complete.
 
 ### Input
 
