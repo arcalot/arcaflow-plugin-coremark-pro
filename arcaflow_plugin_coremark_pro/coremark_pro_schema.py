@@ -107,20 +107,26 @@ class CertifyAllItem:
         float,
         schema.id("MultiCore"),
         schema.name("MultiCore"),
-        schema.description("Workload retult - Multi-Core (iter/s)"),
+        schema.description("Benchmark result - Multi-Core (iter/s)"),
     ]
     single_core: typing.Annotated[
         float,
         schema.id("SingleCore"),
         schema.name("SingleCore"),
-        schema.description("Workload retult - Single-Core (iter/s)"),
+        schema.description("Benchmark result - Single-Core (iter/s)"),
     ]
     scaling: typing.Annotated[
         float,
         schema.id("Scaling"),
         schema.name("Scaling"),
-        schema.description("Workload retult - Scaling"),
+        schema.description("Benchmark result - Scaling"),
     ]
+    iterations: typing.Annotated[
+        typing.Optional[int],
+        schema.id("Iterations"),
+        schema.name("Iterations"),
+        schema.description("Number of benchmark iterations")
+    ] = None
 
 
 @dataclass
@@ -129,54 +135,54 @@ class CertifyAllResult:
         CertifyAllItem,
         schema.id("cjpeg-rose7-preset"),
         schema.name("CJPEG Rose7 Preset"),
-        schema.description("Workload: CJPEG Rose7 Preset"),
+        schema.description("Benchmark: CJPEG Rose7 Preset"),
     ]
     core: typing.Annotated[
         CertifyAllItem,
         schema.id("core"),
         schema.name("Core"),
-        schema.description("Workload: Core"),
+        schema.description("Benchmark: Core"),
     ]
     linear_alg_mid_100x100_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("linear_alg-mid-100x100-sp"),
         schema.name("Linear Alg Mid 100x100 SP"),
-        schema.description("Workload: Linear Alg Mid 100x100 SP"),
+        schema.description("Benchmark: Linear Alg Mid 100x100 SP"),
     ]
     loops_all_mid_10k_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("loops-all-mid-10k-sp"),
         schema.name("Loops All Mid 10k SP"),
-        schema.description("Workload: Loops All Mid 10k SP"),
+        schema.description("Benchmark: Loops All Mid 10k SP"),
     ]
     nnet_test: typing.Annotated[
         CertifyAllItem,
         schema.name("NNet Test"),
-        schema.description("Workload: NNet Test"),
+        schema.description("Benchmark: NNet Test"),
     ]
     parser_125k: typing.Annotated[
         CertifyAllItem,
         schema.id("parser-125k"),
         schema.name("Parser 125k"),
-        schema.description("Workload: Parser 125k"),
+        schema.description("Benchmark: Parser 125k"),
     ]
     radix2_big_64k: typing.Annotated[
         CertifyAllItem,
         schema.id("radix2-big-64k"),
         schema.name("Radix2 Big 64k"),
-        schema.description("Workload: Radix2 Big 64k"),
+        schema.description("Benchmark: Radix2 Big 64k"),
     ]
     sha_test: typing.Annotated[
         CertifyAllItem,
         schema.id("sha-test"),
         schema.name("SHA Test"),
-        schema.description("Workload: SHA Test"),
+        schema.description("Benchmark: SHA Test"),
     ]
     zip_test: typing.Annotated[
         CertifyAllItem,
         schema.id("zip-test"),
         schema.name("ZIP Test"),
-        schema.description("Workload: ZIP Test"),
+        schema.description("Benchmark: ZIP Test"),
     ]
     coremark_pro: typing.Annotated[
         CertifyAllItem,

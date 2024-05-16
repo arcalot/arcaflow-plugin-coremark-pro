@@ -8,7 +8,6 @@ from arcaflow_plugin_sdk import plugin
 from coremark_pro_schema import (
     TuneIterationsInput,
     CertifyAllInput,
-    Iterations,
     iterationsSchema,
     certifyAllResultSchema,
     SuccessOutput,
@@ -19,7 +18,7 @@ from coremark_pro_schema import (
 def run_oneshot_cmd(command_list, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command_list, stderr=subprocess.PIPE, text=True, cwd=workdir
+            command_list, stderr=subprocess.STDOUT, text=True, cwd=workdir
         )
     except subprocess.CalledProcessError as error:
         return "error", ErrorOutput(
@@ -28,6 +27,8 @@ def run_oneshot_cmd(command_list, workdir) -> str:
         )
     return "completed", cmd_out
 
+run_log_path = "/root/coremark-pro/builds/linux64/gcc64/logs/linux64.gcc64.log"
+
 
 @plugin.step(
     id="tune-iterations",
@@ -35,7 +36,10 @@ def run_oneshot_cmd(command_list, workdir) -> str:
     description=(
         "Runs all of the nine tests, checks their run times, calculates the numer of "
         "iterations for each test to rougly reach the 'target_runtime', and returns "
-        "an object compatible with the 'certify-all' step."
+        "an object compatible with the 'certify-all' step. NOTE -- If you are going to "
+        "pass the output of the 'tune-iterations' step to the 'certify-all' step in a "
+        "workflow, you should include in the input to this step all of the parameters "
+        "for the 'certify-all' step so that the output object generated is complete."
     ),
     outputs={"success": CertifyAllInput, "error": ErrorOutput},
 )
@@ -44,12 +48,12 @@ def tune_iterations(
 ) -> typing.Tuple[str, typing.Union[CertifyAllInput, ErrorOutput]]:
 
     # Run the basic certify-all
-    certify_all(params=CertifyAllInput(verify = True), run_id="tune-iterations")
+    certify_all(params=CertifyAllInput(verify=True), run_id="tune-iterations")
 
     benchmark_iterations = {}
 
-    # Get the iteration median for each benchmark
-    with open("/root/coremark-pro/builds/linux64/gcc64/logs/linux64.gcc64.log") as file:
+    # Get the median time for each benchmark and calculate the target iterations
+    with open(file=run_log_path, encoding="utf-8") as file:
         for line in file:
             if "median single" in line:
                 line_list = line.split()
@@ -76,6 +80,22 @@ def tune_iterations(
 def certify_all(
     params: CertifyAllInput,
 ) -> typing.Tuple[str, typing.Union[SuccessOutput, ErrorOutput]]:
+
+    if params.iterations:
+        target_iterations = iterationsSchema.serialize(params.iterations)
+        for benchmark, iterations in target_iterations.items():
+            with open(
+                file=f"/root/coremark-pro/workloads/{benchmark}/{benchmark}.opt",
+                mode="r+",
+                encoding="utf-8",
+            ) as file:
+                opt_output = ""
+                for line in file:
+                    if "WLD_CMD_FLAGS" in line:
+                        opt_output += f"override WLD_CMD_FLAGS=-i{iterations}\n"
+                    else:
+                        opt_output += line
+                file.write(opt_output)
 
     ca_cmd = [
         "make",
@@ -116,16 +136,25 @@ def certify_all(
     }
 
     for line in ca_return[1].splitlines():
+        line_list = line.split()
         try:
-            line_name = line.split()[0]
+            line_name = line_list[0]
         except IndexError:
             pass
-        if line_name in ca_results and len(line.split()) > 1:
+        if line_name in ca_results and len(line_list) > 1:
             ca_results[line_name] = {
-                "MultiCore": line.split()[1],
-                "SingleCore": line.split()[2],
-                "Scaling": line.split()[3],
+                "MultiCore": line_list[1],
+                "SingleCore": line_list[2],
+                "Scaling": line_list[3],
             }
+            if line_name != "CoreMark-PRO":
+                with open(file=run_log_path, encoding="utf-8") as file:
+                    for line in file:
+                        line_list = line.split()
+                        if "median single" in line and line_list[2] == line_name:
+                            ca_results[line_name]["Iterations"] = int(
+                                line_list[7]
+                            )
 
     return "success", SuccessOutput(
         coremark_pro_params=params,
