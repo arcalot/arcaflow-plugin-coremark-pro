@@ -42,8 +42,21 @@ def certify_all(
         "make",
         "-s",
         "certify-all",
-        f"XCMD='-c{params.contexts} -w{params.workers}'",
+        "XCMD='",
     ]
+
+    if params.verify:
+        ca_cmd[-1] += "-v1 "
+    else:
+        ca_cmd[-1] += "-v0 "
+
+    if params.contexts:
+        ca_cmd[-1] += f"-c{params.contexts}"
+
+    if params.workers:
+        ca_cmd[-1] += f"-w{params.workers}"
+
+    ca_cmd[-1] += "'"
 
     ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
 

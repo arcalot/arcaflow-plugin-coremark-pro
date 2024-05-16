@@ -8,15 +8,20 @@ from arcaflow_plugin_sdk import schema, plugin
 @dataclass
 class CertifyAllParams:
     contexts: typing.Annotated[
-        int,
+        typing.Optional[int],
         schema.name("Contexts"),
         schema.description("Number of contexts per benchmark"),
-    ]
+    ] = None
     workers: typing.Annotated[
-        int,
+        typing.Optional[int],
         schema.name("Workers"),
         schema.description("Number of workers per benchmark"),
-    ]
+    ] = None
+    verify: typing.Annotated[
+        typing.Optional[bool],
+        schema.name("Verify"),
+        schema.description("Enable workload verification runs"),
+    ] = False
 
 
 @dataclass
