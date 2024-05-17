@@ -1,0 +1,34 @@
+version: v0.2.0
+input:
+  root: CoremarkProInput
+  objects:
+    CoremarkProInput:
+      id: CoremarkProInput
+      properties:
+        coremark_pro_params:
+          type:
+            type_id: ref
+            id: TuneIterationsInput
+            namespace: $.steps.tune_iterations.starting.inputs.input
+
+steps:
+  # Tune the iterations to the target time
+  tune_iterations:
+    plugin:
+      deployment_type: image
+      src: localhost/coremark-test
+    step: tune-iterations
+    input: !expr $.input.coremark_pro_params
+
+  # Run the benchmarks with the tuned iterations
+  certify_all:
+    plugin:
+      deployment_type: image
+      src: localhost/coremark-test
+    step: certify-all
+    input: !expr $.steps.tune_iterations.outputs.success
+
+outputs:
+  success:
+    coremark_pro_results: !expr $.steps.certify_all.outputs.success
+    

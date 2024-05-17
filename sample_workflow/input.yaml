@@ -1,0 +1,5 @@
+coremark_pro_params:
+  contexts: 2
+  workers: 2
+  target_run_time: 10
+  
