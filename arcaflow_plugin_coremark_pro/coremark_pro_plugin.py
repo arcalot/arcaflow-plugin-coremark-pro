@@ -146,7 +146,7 @@ def certify_all(
                 "SingleCore": float(line_list[2]),
                 "Scaling": float(line_list[3]),
             }
-            # Collect the per-benchmark iterations from the config files
+            # Collect the per-benchmark iterations from the log file
             if line_name != "CoreMark-PRO":
                 with open(file=run_log_path, encoding="utf-8") as file:
                     for line in file:

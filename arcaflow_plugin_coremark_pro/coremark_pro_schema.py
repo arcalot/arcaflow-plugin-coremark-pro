@@ -36,53 +36,53 @@ class Iterations:
     cjpeg_rose7_preset: typing.Annotated[
         typing.Optional[int],
         schema.id("cjpeg-rose7-preset"),
-        schema.name("CJPEG Rose7 Preset Iterations"),
+        schema.name("cjpeg-rose7-preset iterations"),
         schema.description("Iterations for cjpeg-rose7-preset benchmark"),
     ] = None
     core: typing.Annotated[
         typing.Optional[int],
-        schema.name("Core Iterations"),
+        schema.name("core iterations"),
         schema.description("Iterations for core benchmark"),
     ] = None
     linear_alg_mid_100x100_sp: typing.Annotated[
         typing.Optional[int],
         schema.id("linear_alg-mid-100x100-sp"),
-        schema.name("Linear Alg Mid 100x100 SP Iterations"),
+        schema.name("linear_alg-mid-100x100-sp iterations"),
         schema.description("Iterations for linear_alg-mid-100x100-sp benchmark"),
     ] = None
     loops_all_mid_10k_sp: typing.Annotated[
         typing.Optional[int],
         schema.id("loops-all-mid-10k-sp"),
-        schema.name("Loops All Mid 10k SP Iterations"),
+        schema.name("loops-all-mid-10k-sp iterations"),
         schema.description("Iterations for loops-all-mid-10k-sp benchmark"),
     ] = None
     nnet_test: typing.Annotated[
         typing.Optional[int],
-        schema.name("NNet Test Iterations"),
+        schema.name("nnet_test iterations"),
         schema.description("Iterations for nnet_test benchmark"),
     ] = None
     parser_125k: typing.Annotated[
         typing.Optional[int],
         schema.id("parser-125k"),
-        schema.name("Parser 125k Iterations"),
+        schema.name("parser-125k iterations"),
         schema.description("Iterations for parser-125k benchmark"),
     ] = None
     radix2_big_64k: typing.Annotated[
         typing.Optional[int],
         schema.id("radix2-big-64k"),
-        schema.name("Radix2 Big 64k Iterations"),
+        schema.name("radix2-big-64k iterations"),
         schema.description("Iterations for radix2-big-64k benchmark"),
     ] = None
     sha_test: typing.Annotated[
         typing.Optional[int],
         schema.id("sha-test"),
-        schema.name("SHA Test Iterations"),
+        schema.name("sha-test iterations"),
         schema.description("Iterations for sha-test benchmark"),
     ] = None
     zip_test: typing.Annotated[
         typing.Optional[int],
         schema.id("zip-test"),
-        schema.name("ZIP Test Iterations"),
+        schema.name("zip-test iterations"),
         schema.description("Iterations for zip-test benchmark"),
     ] = None
 
@@ -134,60 +134,60 @@ class CertifyAllResult:
     cjpeg_rose7_preset: typing.Annotated[
         CertifyAllItem,
         schema.id("cjpeg-rose7-preset"),
-        schema.name("CJPEG Rose7 Preset"),
-        schema.description("CJPEG Rose7 Preset benchmark results"),
+        schema.name("cjpeg-rose7-preset"),
+        schema.description("cjpeg-rose7-preset benchmark results"),
     ]
     core: typing.Annotated[
         CertifyAllItem,
         schema.id("core"),
-        schema.name("Core"),
-        schema.description("Core benchmark results"),
+        schema.name("core"),
+        schema.description("core benchmark results"),
     ]
     linear_alg_mid_100x100_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("linear_alg-mid-100x100-sp"),
-        schema.name("Linear Alg Mid 100x100 SP"),
-        schema.description("Linear Alg Mid 100x100 SP benchmark results"),
+        schema.name("linear_alg-mid-100x100-sp"),
+        schema.description("linear_alg-mid-100x100-sp benchmark results"),
     ]
     loops_all_mid_10k_sp: typing.Annotated[
         CertifyAllItem,
         schema.id("loops-all-mid-10k-sp"),
-        schema.name("Loops All Mid 10k SP"),
-        schema.description("Loops All Mid 10k SP benchmark results"),
+        schema.name("loops-all-mid-10k-sp"),
+        schema.description("loops-all-mid-10k-sp benchmark results"),
     ]
     nnet_test: typing.Annotated[
         CertifyAllItem,
-        schema.name("NNet Test"),
-        schema.description("NNet Test benchmark results"),
+        schema.name("nnet_test"),
+        schema.description("nnet_test benchmark results"),
     ]
     parser_125k: typing.Annotated[
         CertifyAllItem,
         schema.id("parser-125k"),
-        schema.name("Parser 125k"),
-        schema.description("Parser 125k benchmark results"),
+        schema.name("parser-125k"),
+        schema.description("parser-125k benchmark results"),
     ]
     radix2_big_64k: typing.Annotated[
         CertifyAllItem,
         schema.id("radix2-big-64k"),
-        schema.name("Radix2 Big 64k"),
-        schema.description("Radix2 Big 64k benchmark results"),
+        schema.name("radix2-big-64k"),
+        schema.description("radix2-big-64k benchmark results"),
     ]
     sha_test: typing.Annotated[
         CertifyAllItem,
         schema.id("sha-test"),
-        schema.name("SHA Test"),
-        schema.description("SHA Test benchmark results"),
+        schema.name("sha-test"),
+        schema.description("sha-test benchmark results"),
     ]
     zip_test: typing.Annotated[
         CertifyAllItem,
         schema.id("zip-test"),
-        schema.name("ZIP Test"),
-        schema.description("ZIP Test benchmark results"),
+        schema.name("zip-test"),
+        schema.description("zip-test benchmark results"),
     ]
     coremark_pro: typing.Annotated[
         CertifyAllItem,
         schema.id("CoreMark-PRO"),
-        schema.name("CoreMark PRO"),
+        schema.name("CoreMark-PRO"),
         schema.description("CoreMark-PRO benchmark results"),
     ]
 
