@@ -16,7 +16,7 @@ steps:
   tune_iterations:
     plugin:
       deployment_type: image
-      src: localhost/coremark-test
+      src: localhost/arcaflow-plugin-coremark-pro
     step: tune-iterations
     input: !expr $.input.coremark_pro_params
 
@@ -24,7 +24,7 @@ steps:
   certify_all:
     plugin:
       deployment_type: image
-      src: localhost/coremark-test
+      src: localhost/arcaflow-plugin-coremark-pro
     step: certify-all
     input: !expr $.steps.tune_iterations.outputs.success
 
