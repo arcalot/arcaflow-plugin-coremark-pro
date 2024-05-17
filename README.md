@@ -96,31 +96,31 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 </tbody></table>
         </details><details><summary>Iterations (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>cjpeg-rose7-preset (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CJPEG Rose7 Preset Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for cjpeg-rose7-preset benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>cjpeg-rose7-preset iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for cjpeg-rose7-preset benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>core (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Core Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for core benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>core iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for core benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>linear_alg-mid-100x100-sp (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Linear Alg Mid 100x100 SP Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for linear_alg-mid-100x100-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>linear_alg-mid-100x100-sp iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for linear_alg-mid-100x100-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>loops-all-mid-10k-sp (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Loops All Mid 10k SP Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for loops-all-mid-10k-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>loops-all-mid-10k-sp iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for loops-all-mid-10k-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>nnet_test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>NNet Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for nnet_test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>nnet_test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for nnet_test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>parser-125k (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Parser 125k Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for parser-125k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>parser-125k iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for parser-125k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>radix2-big-64k (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Radix2 Big 64k Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for radix2-big-64k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>radix2-big-64k iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for radix2-big-64k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>sha-test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>SHA Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for sha-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>sha-test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for sha-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>zip-test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>ZIP Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for zip-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>zip-test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for zip-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
@@ -182,25 +182,25 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 </tbody></table>
         </details><details><summary>CertifyAllResult (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>CoreMark-PRO (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CoreMark PRO</td></tr><tr><th>Description:</th><td width="500">CoreMark-PRO benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>CoreMark-PRO</td></tr><tr><th>Description:</th><td width="500">CoreMark-PRO benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>cjpeg-rose7-preset (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CJPEG Rose7 Preset</td></tr><tr><th>Description:</th><td width="500">CJPEG Rose7 Preset benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>cjpeg-rose7-preset</td></tr><tr><th>Description:</th><td width="500">cjpeg-rose7-preset benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>core (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Core</td></tr><tr><th>Description:</th><td width="500">Core benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>core</td></tr><tr><th>Description:</th><td width="500">core benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>linear_alg-mid-100x100-sp (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Linear Alg Mid 100x100 SP</td></tr><tr><th>Description:</th><td width="500">Linear Alg Mid 100x100 SP benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>linear_alg-mid-100x100-sp</td></tr><tr><th>Description:</th><td width="500">linear_alg-mid-100x100-sp benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>loops-all-mid-10k-sp (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Loops All Mid 10k SP</td></tr><tr><th>Description:</th><td width="500">Loops All Mid 10k SP benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>loops-all-mid-10k-sp</td></tr><tr><th>Description:</th><td width="500">loops-all-mid-10k-sp benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>nnet_test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>NNet Test</td></tr><tr><th>Description:</th><td width="500">NNet Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>nnet_test</td></tr><tr><th>Description:</th><td width="500">nnet_test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>parser-125k (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Parser 125k</td></tr><tr><th>Description:</th><td width="500">Parser 125k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>parser-125k</td></tr><tr><th>Description:</th><td width="500">parser-125k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>radix2-big-64k (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Radix2 Big 64k</td></tr><tr><th>Description:</th><td width="500">Radix2 Big 64k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>radix2-big-64k</td></tr><tr><th>Description:</th><td width="500">radix2-big-64k benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>sha-test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>SHA Test</td></tr><tr><th>Description:</th><td width="500">SHA Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>sha-test</td></tr><tr><th>Description:</th><td width="500">sha-test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details><details><summary>zip-test (<code>reference[CertifyAllItem]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>ZIP Test</td></tr><tr><th>Description:</th><td width="500">ZIP Test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>zip-test</td></tr><tr><th>Description:</th><td width="500">zip-test benchmark results</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllItem]</code></td><tr><th>Referenced object:</th><td>CertifyAllItem</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SuccessOutput (<code>object</code>)</summary>
@@ -300,31 +300,31 @@ Runs all of the nine tests, checks their run times, calculates the number of ite
 </tbody></table>
         </details><details><summary>Iterations (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>cjpeg-rose7-preset (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CJPEG Rose7 Preset Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for cjpeg-rose7-preset benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>cjpeg-rose7-preset iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for cjpeg-rose7-preset benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>core (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Core Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for core benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>core iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for core benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>linear_alg-mid-100x100-sp (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Linear Alg Mid 100x100 SP Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for linear_alg-mid-100x100-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>linear_alg-mid-100x100-sp iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for linear_alg-mid-100x100-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>loops-all-mid-10k-sp (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Loops All Mid 10k SP Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for loops-all-mid-10k-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>loops-all-mid-10k-sp iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for loops-all-mid-10k-sp benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>nnet_test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>NNet Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for nnet_test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>nnet_test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for nnet_test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>parser-125k (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Parser 125k Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for parser-125k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>parser-125k iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for parser-125k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>radix2-big-64k (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Radix2 Big 64k Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for radix2-big-64k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>radix2-big-64k iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for radix2-big-64k benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>sha-test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>SHA Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for sha-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>sha-test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for sha-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>zip-test (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>ZIP Test Iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for zip-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>zip-test iterations</td></tr><tr><th>Description:</th><td width="500">Iterations for zip-test benchmark</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
