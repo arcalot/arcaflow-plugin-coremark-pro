@@ -31,4 +31,3 @@ steps:
 outputs:
   success:
     coremark_pro_results: !expr $.steps.certify_all.outputs.success
-    

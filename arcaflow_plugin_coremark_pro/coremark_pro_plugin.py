@@ -146,13 +146,15 @@ def certify_all(
                 "SingleCore": float(line_list[2]),
                 "Scaling": float(line_list[3]),
             }
-            # Collect the per-benchmark iterations from the log file
-            if line_name != "CoreMark-PRO":
-                with open(file=run_log_path, encoding="utf-8") as file:
-                    for line in file:
-                        line_list = line.split()
-                        if "median single" in line and line_list[2] == line_name:
-                            ca_results[line_name]["Iterations"] = int(line_list[7])
+
+    # Collect the per-benchmark iterations from the log file
+    with open(file=run_log_path, encoding="utf-8") as file:
+        for line in file:
+            if "median single" not in line or "CoreMark-PRO" in line:
+                continue
+            line_list = line.split()
+            if line_list[2] in ca_results:
+                ca_results[line_list[2]]["Iterations"] = int(line_list[7])
 
     return "success", SuccessOutput(
         coremark_pro_params=params,
