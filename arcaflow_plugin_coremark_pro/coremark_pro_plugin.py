@@ -2,6 +2,7 @@
 
 import subprocess
 import sys
+import re
 import typing
 from math import ceil
 from arcaflow_plugin_sdk import plugin
@@ -55,11 +56,12 @@ def tune_iterations(
 
     # Get the median time for each benchmark and calculate the target iterations
     with open(file=run_log_path, encoding="utf-8") as file:
-        for line in file:
-            if "median single" in line:
-                line_list = line.split()
-                benchmark_iterations[line_list[2]] = ceil(
-                    params.target_run_time / float(line_list[6])
+        for log in file:
+            if "median single" in log:
+                log_list = log.split()
+                log_name = log_list[2]
+                benchmark_iterations[log_name] = ceil(
+                    params.target_run_time / float(log_list[6])
                 )
 
     return "success", CertifyAllInput(
@@ -135,6 +137,8 @@ def certify_all(
 
     # Construct the output object
     for line in ca_return[1].splitlines():
+        if re.match(r'^(\s+|Starting|W(?i)[orkload]|-|M(?i)[ark])', line):
+            continue
         line_list = line.split()
         try:
             line_name = line_list[0]
@@ -149,12 +153,13 @@ def certify_all(
 
     # Collect the per-benchmark iterations from the log file
     with open(file=run_log_path, encoding="utf-8") as file:
-        for line in file:
-            if "median single" not in line or "CoreMark-PRO" in line:
+        for log in file:
+            if "median single" not in log or "CoreMark-PRO" in log:
                 continue
-            line_list = line.split()
-            if line_list[2] in ca_results:
-                ca_results[line_list[2]]["Iterations"] = int(line_list[7])
+            log_list = log.split()
+            log_name = log_list[2]
+            if log_name in ca_results:
+                ca_results[log_name]["Iterations"] = int(log_list[7])
 
     return "success", SuccessOutput(
         coremark_pro_params=params,
