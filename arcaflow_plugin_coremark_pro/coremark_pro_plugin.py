@@ -19,7 +19,11 @@ from coremark_pro_schema import (
 def run_oneshot_cmd(command_list, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command_list, stderr=subprocess.STDOUT, text=True, cwd=workdir
+            command_list,
+            stderr=subprocess.STDOUT,
+            text=True,
+            cwd=workdir,
+            shell=True,
         )
     except subprocess.CalledProcessError as error:
         return "error", ErrorOutput(
@@ -116,8 +120,10 @@ def certify_all(
         xcmd.append(f"-w{params.workers}")
     ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
 
+    ca_cmd_string = ' '.join(ca_cmd)
+
     # Run certify-all
-    ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
+    ca_return = run_oneshot_cmd(ca_cmd_string, "/root/coremark-pro")
 
     if ca_return[0] == "error":
         return ca_return
