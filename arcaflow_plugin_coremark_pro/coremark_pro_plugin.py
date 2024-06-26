@@ -16,10 +16,10 @@ from coremark_pro_schema import (
 )
 
 
-def run_oneshot_cmd(command_list, workdir) -> str:
+def run_oneshot_cmd(command, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command_list,
+            command,
             stderr=subprocess.STDOUT,
             text=True,
             cwd=workdir,
@@ -120,7 +120,7 @@ def certify_all(
         xcmd.append(f"-w{params.workers}")
     ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
 
-    ca_cmd_string = ' '.join(ca_cmd)
+    ca_cmd_string = " ".join(ca_cmd)
 
     # Run certify-all
     ca_return = run_oneshot_cmd(ca_cmd_string, "/root/coremark-pro")
@@ -142,9 +142,9 @@ def certify_all(
     }
 
     # Construct the output object
-    search = re.compile(r'^(\s+|Starting|Workload|-|Mark)', re.IGNORECASE)
+    exclusion_search = re.compile(r"^(\s+|Starting|Workload|-|Mark)", re.IGNORECASE)
     for line in ca_return[1].splitlines():
-        if search.match(line):
+        if exclusion_search.match(line):
             continue
         line_list = line.split()
         try:
@@ -169,7 +169,7 @@ def certify_all(
                 ca_results[log_name]["Iterations"] = int(log_list[7])
 
     return "success", SuccessOutput(
-        coremark_pro_command=' '.join(ca_cmd),
+        coremark_pro_command=ca_cmd_string,
         coremark_pro_params=params,
         coremark_pro_results=certifyAllResultSchema.unserialize(ca_results),
     )

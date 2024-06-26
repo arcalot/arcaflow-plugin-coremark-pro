@@ -107,8 +107,8 @@ class CoreMarkProTest(unittest.TestCase):
         self.assertAlmostEqual(
             ca_output_data.coremark_pro_results.core.multi_core,
             (
-                ca_output_data.coremark_pro_results.core.single_core *
-                ca_output_data.coremark_pro_results.core.scaling
+                ca_output_data.coremark_pro_results.core.single_core
+                * ca_output_data.coremark_pro_results.core.scaling
             ),
             1,
         )
