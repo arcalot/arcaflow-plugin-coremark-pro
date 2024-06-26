@@ -136,8 +136,9 @@ def certify_all(
     }
 
     # Construct the output object
+    search = re.compile(r'^(\s+|Starting|Workload|-|Mark)', re.IGNORECASE)
     for line in ca_return[1].splitlines():
-        if re.match(r'^(\s+|Starting|W(?i)[orkload]|-|M(?i)[ark])', line):
+        if search.match(line):
             continue
         line_list = line.split()
         try:
