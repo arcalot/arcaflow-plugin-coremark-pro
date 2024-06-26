@@ -23,7 +23,6 @@ def run_oneshot_cmd(command, workdir) -> str:
             stderr=subprocess.STDOUT,
             text=True,
             cwd=workdir,
-            shell=True,
         )
     except subprocess.CalledProcessError as error:
         return "error", ErrorOutput(
@@ -118,12 +117,10 @@ def certify_all(
         xcmd.append(f"-c{params.contexts}")
     if params.workers:
         xcmd.append(f"-w{params.workers}")
-    ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
-
-    ca_cmd_string = " ".join(ca_cmd)
+    ca_cmd.append(f"XCMD={' '.join(xcmd)}")
 
     # Run certify-all
-    ca_return = run_oneshot_cmd(ca_cmd_string, "/root/coremark-pro")
+    ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
 
     if ca_return[0] == "error":
         return ca_return
@@ -169,7 +166,7 @@ def certify_all(
                 ca_results[log_name]["Iterations"] = int(log_list[7])
 
     return "success", SuccessOutput(
-        coremark_pro_command=ca_cmd_string,
+        coremark_pro_command=" ".join(ca_cmd),
         coremark_pro_params=params,
         coremark_pro_results=certifyAllResultSchema.unserialize(ca_results),
     )
