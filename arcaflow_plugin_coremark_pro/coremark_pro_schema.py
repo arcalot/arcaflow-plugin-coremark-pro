@@ -197,6 +197,11 @@ certifyAllResultSchema = plugin.build_object_schema(CertifyAllResult)
 
 @dataclass
 class SuccessOutput:
+    coremark_pro_command: typing.Annotated[
+        str,
+        schema.name("CoreMark®-PRO command line"),
+        schema.description("The complete command line passed to CoreMark®-PRO"),
+    ]
     coremark_pro_params: typing.Annotated[
         CertifyAllParams,
         schema.name("Test Params"),

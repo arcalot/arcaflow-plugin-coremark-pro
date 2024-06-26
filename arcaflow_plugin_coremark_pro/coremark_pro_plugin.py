@@ -162,6 +162,7 @@ def certify_all(
                 ca_results[log_name]["Iterations"] = int(log_list[7])
 
     return "success", SuccessOutput(
+        coremark_pro_command=' '.join(ca_cmd),
         coremark_pro_params=params,
         coremark_pro_results=certifyAllResultSchema.unserialize(ca_results),
     )
