@@ -117,6 +117,8 @@ def certify_all(
         xcmd.append(f"-c{params.contexts}")
     if params.workers:
         xcmd.append(f"-w{params.workers}")
+    # The coremark `make` command passes parameters to the individual benchmarks via
+    # the sub-parameters provided to the XCMD variable
     ca_cmd.append(f"XCMD={' '.join(xcmd)}")
 
     # Run certify-all
