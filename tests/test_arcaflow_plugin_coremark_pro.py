@@ -14,8 +14,8 @@ from arcaflow_plugin_sdk import plugin
 
 
 tune_iterations_input = TuneIterationsInput(
-    contexts=1,
-    workers=1,
+    contexts=2,
+    workers=2,
     target_run_time=2,
 )
 
@@ -33,8 +33,8 @@ iterations = Iterations(
 
 certify_all_input = CertifyAllInput(
     verify=True,
-    contexts=1,
-    workers=1,
+    contexts=2,
+    workers=2,
     iterations=iterations,
 )
 
@@ -81,8 +81,8 @@ class CoreMarkProTest(unittest.TestCase):
         )
 
         self.assertEqual(ti_output_id, "success")
-        self.assertEqual(ti_output_data.contexts, 1)
-        self.assertEqual(ti_output_data.workers, 1)
+        self.assertEqual(ti_output_data.contexts, 2)
+        self.assertEqual(ti_output_data.workers, 2)
         self.assertIsInstance(ti_output_data.iterations.core, int)
 
         ca_output_id, ca_output_data = coremark_pro_plugin.certify_all(
@@ -90,8 +90,8 @@ class CoreMarkProTest(unittest.TestCase):
         )
 
         self.assertEqual(ca_output_id, "success")
-        self.assertEqual(ca_output_data.coremark_pro_params.contexts, 1)
-        self.assertEqual(ca_output_data.coremark_pro_params.workers, 1)
+        self.assertEqual(ca_output_data.coremark_pro_params.contexts, 2)
+        self.assertEqual(ca_output_data.coremark_pro_params.workers, 2)
         self.assertEqual(
             ca_output_data.coremark_pro_params.iterations.core,
             ca_output_data.coremark_pro_results.core.iterations,
@@ -99,6 +99,18 @@ class CoreMarkProTest(unittest.TestCase):
         self.assertIsInstance(
             ca_output_data.coremark_pro_results.core.multi_core,
             float,
+        )
+        self.assertGreater(
+            ca_output_data.coremark_pro_results.core.multi_core,
+            ca_output_data.coremark_pro_results.core.single_core,
+        )
+        self.assertAlmostEqual(
+            ca_output_data.coremark_pro_results.core.multi_core,
+            (
+                ca_output_data.coremark_pro_results.core.single_core
+                * ca_output_data.coremark_pro_results.core.scaling
+            ),
+            1,
         )
 
 

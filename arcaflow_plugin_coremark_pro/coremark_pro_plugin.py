@@ -19,7 +19,10 @@ from coremark_pro_schema import (
 def run_oneshot_cmd(command_list, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command_list, stderr=subprocess.STDOUT, text=True, cwd=workdir
+            command_list,
+            stderr=subprocess.STDOUT,
+            text=True,
+            cwd=workdir,
         )
     except subprocess.CalledProcessError as error:
         return "error", ErrorOutput(
@@ -114,7 +117,9 @@ def certify_all(
         xcmd.append(f"-c{params.contexts}")
     if params.workers:
         xcmd.append(f"-w{params.workers}")
-    ca_cmd.append(f"XCMD={' '.join(xcmd)!r}")
+    # The coremark `make` command passes parameters to the individual benchmarks via
+    # the sub-parameters provided to the XCMD variable
+    ca_cmd.append(f"XCMD={' '.join(xcmd)}")
 
     # Run certify-all
     ca_return = run_oneshot_cmd(ca_cmd, "/root/coremark-pro")
@@ -136,8 +141,9 @@ def certify_all(
     }
 
     # Construct the output object
+    exclusion_search = re.compile(r"^(\s+|Starting|Workload|-|Mark)", re.IGNORECASE)
     for line in ca_return[1].splitlines():
-        if re.match(r'^(\s+|Starting|W(?i)[orkload]|-|M(?i)[ark])', line):
+        if exclusion_search.match(line):
             continue
         line_list = line.split()
         try:
@@ -162,6 +168,7 @@ def certify_all(
                 ca_results[log_name]["Iterations"] = int(log_list[7])
 
     return "success", SuccessOutput(
+        coremark_pro_command=" ".join(ca_cmd),
         coremark_pro_params=params,
         coremark_pro_results=certifyAllResultSchema.unserialize(ca_results),
     )

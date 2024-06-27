@@ -149,7 +149,9 @@ Runs all of the nine tests, collects their output scores, and processes them to 
 
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SuccessOutput</td></tr>
-<tr><th>Properties</th><td><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
+<tr><th>Properties</th><td><details><summary>coremark_pro_command (<code>string</code>)</summary>
+                <table><tbody><tr><th>Name:</th><td>CoreMark®-PRO command line</td></tr><tr><th>Description:</th><td width="500">The complete command line passed to CoreMark®-PRO</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+            </details><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
                 <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The parameters supplied to the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
             </details><details><summary>coremark_pro_results (<code>reference[CertifyAllResult]</code>)</summary>
                 <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">Results of the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
@@ -204,7 +206,9 @@ Runs all of the nine tests, collects their output scores, and processes them to 
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SuccessOutput (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>coremark_pro_command (<code>string</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>CoreMark®-PRO command line</td></tr><tr><th>Description:</th><td width="500">The complete command line passed to CoreMark®-PRO</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        </details><details><summary>coremark_pro_params (<code>reference[CertifyAllParams]</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Test Params</td></tr><tr><th>Description:</th><td width="500">The parameters supplied to the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllParams]</code></td><tr><th>Referenced object:</th><td>CertifyAllParams</td></tr></tbody></table>
         </details><details><summary>coremark_pro_results (<code>reference[CertifyAllResult]</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Test Results</td></tr><tr><th>Description:</th><td width="500">Results of the CoreMark®-PRO benchmarks</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CertifyAllResult]</code></td><tr><th>Referenced object:</th><td>CertifyAllResult</td></tr></tbody></table>
