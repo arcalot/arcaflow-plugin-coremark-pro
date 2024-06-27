@@ -16,10 +16,10 @@ from coremark_pro_schema import (
 )
 
 
-def run_oneshot_cmd(command, workdir) -> str:
+def run_oneshot_cmd(command_list, workdir) -> str:
     try:
         cmd_out = subprocess.check_output(
-            command,
+            command_list,
             stderr=subprocess.STDOUT,
             text=True,
             cwd=workdir,
